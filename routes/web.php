@@ -19,11 +19,16 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+//users
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+//orders
+Route::get('/orders', [Controllers\OrdersController::class, 'index'])->name('orders.index');
+Route::post('/orders', [Controllers\OrdersController::class, 'store'])->name('orders.store');
+Route::put('/orders/{id}', [Controllers\OrdersController::class, 'update'])->name('orders.update');
+Route::delete('/orders/{id}', [Controllers\OrdersController::class, 'destroy'])->name('orders.destroy');
 
 Auth::routes();
 
