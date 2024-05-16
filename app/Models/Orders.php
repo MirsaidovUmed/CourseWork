@@ -20,6 +20,7 @@ class Orders extends Model
         'clients_id',
         'order_date',
         'status_id',
+        'product_id',
         'order_price',
         'description',
     ];
@@ -42,5 +43,10 @@ class Orders extends Model
     public function status(): BelongsTo
     {
         return $this->belongsTo(OrderStatus::class, 'status_id');
+    }
+
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(Products::class, 'product_id');
     }
 }

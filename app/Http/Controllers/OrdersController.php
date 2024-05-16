@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Orders;
 use App\Models\OrderStatus;
+use App\Models\Products;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -21,7 +22,8 @@ class OrdersController extends Controller
         $orders = Orders::with(['client', 'status'])->get();
         $clients = User::all();
         $statuses = OrderStatus::all();
-        return view('orders/index', compact('orders', 'clients', 'statuses'));
+        $products = Products::all();
+        return view('orders/index', compact('orders', 'clients', 'statuses', 'products'));
     }
 
     /**
@@ -34,9 +36,10 @@ class OrdersController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'clients_id' => 'required|exists:clients,id',
+            'clients_id' => 'required|exists:users,id',
             'order_date' => 'required|date',
             'status_id' => 'required|exists:order_statuses,id',
+            'product_id' => 'required|exists:products,id',
             'order_price' => 'required|numeric',
             'description' => 'nullable|string',
         ]);
@@ -46,6 +49,7 @@ class OrdersController extends Controller
             'clients_id' => $request->clients_id,
             'order_date' => $request->order_date,
             'status_id' => $request->status_id,
+            'product_id' => $request->product_id,
             'order_price' => $request->order_price,
             'description' => $request->description,
         ]);
@@ -69,6 +73,7 @@ class OrdersController extends Controller
             'clients_id' => 'required|exists:clients,id',
             'order_date' => 'required|date',
             'status_id' => 'required|exists:order_statuses,id',
+            'product_id' => 'required|exists:products,id',
             'order_price' => 'required|numeric',
             'description' => 'nullable|string',
         ]);
@@ -78,6 +83,7 @@ class OrdersController extends Controller
             'clients_id' => $request->clients_id,
             'order_date' => $request->order_date,
             'status_id' => $request->status_id,
+            'product_id' => $request->product_id,
             'order_price' => $request->order_price,
             'description' => $request->description,
         ]);

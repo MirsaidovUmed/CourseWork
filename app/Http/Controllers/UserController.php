@@ -35,7 +35,7 @@ class UserController extends Controller
         $user->password = Hash::make($request->input('password'));
         $user->save();
 
-        return redirect()->route('users')->with('status', 'User Created');
+        return back()->with('status', 'User Created');
     }
 
     public function update(Request $request, $id): RedirectResponse

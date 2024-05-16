@@ -5,9 +5,9 @@
         <h2 class="my-4">Products</h2>
 
         <!-- Display success messages -->
-        @if(session('success'))
+        @if(session('status'))
             <div class="alert alert-success">
-                {{ session('success') }}
+                {{ session('status') }}
             </div>
         @endif
 

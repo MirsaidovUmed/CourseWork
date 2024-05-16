@@ -47,6 +47,7 @@
         </table>
     </div>
 
+    <!-- Create Order Modal -->
     <div class="modal fade" id="createOrderModal" tabindex="-1" role="dialog" aria-labelledby="createOrderModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -66,11 +67,10 @@
                         </div>
                         <div class="form-group">
                             <label for="client_id">Client</label>
-                            <select name="clients_id" class="form-control" required>
-                                @foreach($clients as $client)
-                                    <option value="{{ $client->id }}">{{ $client->first_name }}</option>
-                                @endforeach
-                            </select>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal"
+                                    data-target="#selectClientModal">Select Client
+                            </button>
+                            <input type="hidden" name="clients_id" id="selectedClientId" required>
                         </div>
                         <div class="form-group">
                             <label for="order_date">Order Date</label>

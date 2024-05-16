@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('clients_id')->references('id')->on('users');
             $table->date('order_date');
             $table->foreignId('status_id')->references('id')->on('order_statuses');
+            $table->foreignId('product_id')->references('id')->on('products');
             $table->float('order_price');
             $table->string('description');
             $table->rememberToken();
