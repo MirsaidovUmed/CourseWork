@@ -70,7 +70,7 @@ class OrdersController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'clients_id' => 'required|exists:clients,id',
+            'clients_id' => 'required|exists:users,id',
             'order_date' => 'required|date',
             'status_id' => 'required|exists:order_statuses,id',
             'product_id' => 'required|exists:products,id',
