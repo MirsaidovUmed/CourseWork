@@ -34,6 +34,11 @@ Route::get('/products', [Controllers\ProductController::class, 'index'])->name('
 Route::post('/products', [Controllers\ProductController::class, 'store'])->name('products.store');
 Route::put('/products/{id}', [Controllers\ProductController::class, 'update'])->name('products.update');
 Route::delete('/products/{id}', [Controllers\ProductController::class, 'destroy'])->name('products.destroy');
+//reports
+Route::get('/reports', [Controllers\ReportsController::class, 'index'])->name('reports.index');
+Route::post('/reports', [Controllers\ReportsController::class, 'store'])->name('reports.store');
+Route::put('/reports/{id}', [Controllers\ReportsController::class, 'update'])->name('reports.update');
+Route::delete('/reports/{id}', [Controllers\ReportsController::class, 'destroy'])->name('reports.destroy');
 
 Auth::routes();
 

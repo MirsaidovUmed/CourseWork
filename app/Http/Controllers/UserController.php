@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index(): View
     {
         $users = User::all();
-        return view('index', compact('users'));
+        return view('users/index', compact('users'));
     }
 
     public function store(Request $request): RedirectResponse
@@ -69,6 +69,6 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect()->route('users');
+        return back();
     }
 }
