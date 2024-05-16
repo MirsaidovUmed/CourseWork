@@ -29,6 +29,11 @@ Route::get('/orders', [Controllers\OrdersController::class, 'index'])->name('ord
 Route::post('/orders', [Controllers\OrdersController::class, 'store'])->name('orders.store');
 Route::put('/orders/{id}', [Controllers\OrdersController::class, 'update'])->name('orders.update');
 Route::delete('/orders/{id}', [Controllers\OrdersController::class, 'destroy'])->name('orders.destroy');
+//products
+Route::get('/products', [Controllers\ProductController::class, 'index'])->name('products.index');
+Route::post('/products', [Controllers\ProductController::class, 'store'])->name('products.store');
+Route::put('/products/{id}', [Controllers\ProductController::class, 'update'])->name('products.update');
+Route::delete('/products/{id}', [Controllers\ProductController::class, 'destroy'])->name('products.destroy');
 
 Auth::routes();
 

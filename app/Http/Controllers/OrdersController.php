@@ -53,18 +53,6 @@ class OrdersController extends Controller
         return back()->with('status', 'Order Created Successfully');
     }
 
-//    /**
-//     * Display the specified order.
-//     *
-//     * @param int $id
-//     * @return View
-//     */
-//    public function show(int $id): View
-//    {
-//        $order = Orders::with(['client', 'status'])->findOrFail($id);
-//        return view('order_show', compact('order'));
-//    }
-
     /**
      * Update the specified order in storage.
      *
