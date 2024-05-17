@@ -39,6 +39,11 @@ Route::get('/reports', [Controllers\ReportsController::class, 'index'])->name('r
 Route::post('/reports', [Controllers\ReportsController::class, 'store'])->name('reports.store');
 Route::put('/reports/{id}', [Controllers\ReportsController::class, 'update'])->name('reports.update');
 Route::delete('/reports/{id}', [Controllers\ReportsController::class, 'destroy'])->name('reports.destroy');
+//mediaPlans
+Route::get('/media_plans', [Controllers\MediaPlansController::class, 'index'])->name('media_plans.index');
+Route::post('/media_plans', [Controllers\MediaPlansController::class, 'store'])->name('media_plans.store');
+Route::put('/media_plans/{id}', [Controllers\MediaPlansController::class, 'update'])->name('media_plans.update');
+Route::delete('/media_plans/{id}', [Controllers\MediaPlansController::class, 'destroy'])->name('media_plans.destroy');
 
 Auth::routes();
 

@@ -19,7 +19,7 @@ class MediaPlans extends Model
         'order_id',
         'start_date',
         'end_date',
-        'channel_id',
+        'channels_id',
     ];
 
     /**
@@ -39,6 +39,6 @@ class MediaPlans extends Model
      */
     public function channel(): BelongsTo
     {
-        return $this->belongsTo(Channels::class);
+        return $this->belongsTo(Channels::class, 'channels_id');
     }
 }
