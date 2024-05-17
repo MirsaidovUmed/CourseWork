@@ -29,6 +29,38 @@ This project represents an information system developed for the customer departm
 4. Run database migrations using `php artisan migrate` command.
 5. Start the server by running `php artisan serve` command.
 
+## Routes
+
+### Users
+- **GET /users**: Display a listing of users.
+- **POST /users**: Store a newly created user in storage.
+- **PUT /users/{id}**: Update the specified user in storage.
+- **DELETE /users/{id}**: Remove the specified user from storage.
+
+### Orders
+- **GET /orders**: Display a listing of orders.
+- **POST /orders**: Store a newly created order in storage.
+- **PUT /orders/{id}**: Update the specified order in storage.
+- **DELETE /orders/{id}**: Remove the specified order from storage.
+
+### Products
+- **GET /products**: Display a listing of products.
+- **POST /products**: Store a newly created product in storage.
+- **PUT /products/{id}**: Update the specified product in storage.
+- **DELETE /products/{id}**: Remove the specified product from storage.
+
+### Reports
+- **GET /reports**: Display a listing of reports.
+- **POST /reports**: Store a newly created report in storage.
+- **PUT /reports/{id}**: Update the specified report in storage.
+- **DELETE /reports/{id}**: Remove the specified report from storage.
+
+### Media Plans
+- **GET /media_plans**: Display a listing of media plans.
+- **POST /media_plans**: Store a newly created media plan in storage.
+- **PUT /media_plans/{id}**: Update the specified media plan in storage.
+- **DELETE /media_plans/{id}**: Remove the specified media plan from storage.
+
 ## Usage
 
 1. Create a new customer by providing their details.
