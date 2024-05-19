@@ -3,7 +3,6 @@
 use App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 //users
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::post('/users', [UserController::class, 'store'])->name('users.store');
-Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
-Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::get('/users', [Controllers\UserController::class, 'index'])->name('users.index');
+Route::post('/users', [Controllers\UserController::class, 'store'])->name('users.store');
+Route::put('/users/{id}', [Controllers\UserController::class, 'update'])->name('users.update');
+Route::delete('/users/{id}', [Controllers\UserController::class, 'destroy'])->name('users.destroy');
 //orders
 Route::get('/orders', [Controllers\OrdersController::class, 'index'])->name('orders.index');
 Route::post('/orders', [Controllers\OrdersController::class, 'store'])->name('orders.store');
@@ -47,4 +46,4 @@ Route::delete('/media_plans/{id}', [Controllers\MediaPlansController::class, 'de
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
