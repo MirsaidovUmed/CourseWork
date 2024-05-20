@@ -19,11 +19,11 @@ class OrdersController extends Controller
      */
     public function index(): View
     {
-        $orders = Orders::with(['client', 'status'])->get();
+        $orders = Orders::with(['client', 'status', 'product'])->paginate(10);
         $clients = User::all();
         $statuses = OrderStatus::all();
         $products = Products::all();
-        return view('orders/index', compact('orders', 'clients', 'statuses', 'products'));
+        return view('orders.index', compact('orders', 'clients', 'statuses', 'products'));
     }
 
     /**

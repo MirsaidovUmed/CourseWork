@@ -13,7 +13,7 @@ class MediaPlansController extends Controller
 {
     public function index(): View
     {
-        $mPlans = MediaPlans::with(['order', 'channel'])->get();
+        $mPlans = MediaPlans::with(['order', 'channel'])->paginate(10);
         $orders = Orders::all();
         $channels = Channels::all();
         return view('media_plans/index', compact('mPlans', 'orders', 'channels'));

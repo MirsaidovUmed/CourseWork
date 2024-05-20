@@ -39,7 +39,11 @@
             @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+            {{ $users->onEachSide(1)->links('vendor.pagination.custom') }}
+        </div>
     </div>
+
     <!-- Create User Modal -->
     <div class="modal fade" id="createUserModal" tabindex="-1" role="dialog" aria-labelledby="createUserModalLabel"
          aria-hidden="true">
@@ -122,7 +126,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="password">New Password</label>
-                                <input type="password" name="password" class="form-control" required>
+                                <input type="password" name="password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="current_password">Current Password</label>

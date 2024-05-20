@@ -37,6 +37,9 @@
             @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+            {{ $reports->links('vendor.pagination.custom') }}
+        </div>
     </div>
 
     <!-- Create Report Modal -->

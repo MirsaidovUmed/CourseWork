@@ -13,7 +13,7 @@ class ReportsController extends Controller
 {
     public function index(): View
     {
-        $reports = Reports::with(['type', 'order'])->get();
+        $reports = Reports::with(['type', 'order'])->paginate(10);
         $types = ReportTypes::all();
         $orders = Orders::all();
         return view('reports/index', compact('reports', 'types', 'orders'));

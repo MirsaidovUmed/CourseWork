@@ -39,6 +39,10 @@
             @endforeach
             </tbody>
         </table>
+
+        <div class="d-flex justify-content-center">
+            {{ $mPlans->links('vendor.pagination.custom') }}
+        </div>
     </div>
 
     <!-- Create Media Plan Modal -->
@@ -110,7 +114,8 @@
                                 <label for="order_id">Order</label>
                                 <select name="order_id" class="form-control" required>
                                     @foreach($orders as $order)
-                                        <option value="{{ $order->id }}" {{ $mPlan->order_id == $order->id ? 'selected' : '' }}>
+                                        <option
+                                            value="{{ $order->id }}" {{ $mPlan->order_id == $order->id ? 'selected' : '' }}>
                                             {{ $order->name }}
                                         </option>
                                     @endforeach
@@ -118,18 +123,21 @@
                             </div>
                             <div class="form-group">
                                 <label for="start_date">Start Date</label>
-                                <input type="date" name="start_date" class="form-control" value="{{ $mPlan->start_date }}"
+                                <input type="date" name="start_date" class="form-control"
+                                       value="{{ $mPlan->start_date }}"
                                        required>
                             </div>
                             <div class="form-group">
                                 <label for="end_date">End Date</label>
-                                <input type="date" name="end_date" class="form-control" value="{{ $mPlan->end_date }}" required>
+                                <input type="date" name="end_date" class="form-control" value="{{ $mPlan->end_date }}"
+                                       required>
                             </div>
                             <div class="form-group">
                                 <label for="channels_id">Channel</label>
                                 <select name="channels_id" class="form-control" required>
                                     @foreach($channels as $channel)
-                                        <option value="{{ $channel->id }}" {{ $mPlan->channels_id == $channel->id ? 'selected' : '' }}>
+                                        <option
+                                            value="{{ $channel->id }}" {{ $mPlan->channels_id == $channel->id ? 'selected' : '' }}>
                                             {{ $channel->name }}
                                         </option>
                                     @endforeach

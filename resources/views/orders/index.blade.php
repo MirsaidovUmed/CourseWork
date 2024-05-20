@@ -45,6 +45,9 @@
             @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+            {{ $orders->links('vendor.pagination.custom') }}
+        </div>
     </div>
 
     <!-- Create Order Modal -->
@@ -113,7 +116,8 @@
 
     <!-- Edit Order Modals -->
     @foreach($orders as $order)
-        <div class="modal fade" id="editOrderModal-{{ $order->id }}" tabindex="-1" role="dialog" aria-labelledby="editOrderModalLabel-{{ $order->id }}"
+        <div class="modal fade" id="editOrderModal-{{ $order->id }}" tabindex="-1" role="dialog"
+             aria-labelledby="editOrderModalLabel-{{ $order->id }}"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -135,19 +139,22 @@
                                 <label for="clients_id">Client</label>
                                 <select name="clients_id" class="form-control" required>
                                     @foreach($clients as $client)
-                                        <option value="{{ $client->id }}" {{ $client->id == $order->clients_id ? 'selected' : '' }}>{{ $client->first_name }}</option>
+                                        <option
+                                            value="{{ $client->id }}" {{ $client->id == $order->clients_id ? 'selected' : '' }}>{{ $client->first_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="order_date">Order Date</label>
-                                <input type="date" name="order_date" class="form-control" value="{{ $order->order_date }}" required>
+                                <input type="date" name="order_date" class="form-control"
+                                       value="{{ $order->order_date }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="status_id">Order Status</label>
                                 <select name="status_id" class="form-control" required>
                                     @foreach($statuses as $status)
-                                        <option value="{{ $status->id }}" {{ $status->id == $order->status_id ? 'selected' : '' }}>{{ $status->name }}</option>
+                                        <option
+                                            value="{{ $status->id }}" {{ $status->id == $order->status_id ? 'selected' : '' }}>{{ $status->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -155,13 +162,15 @@
                                 <label for="product_id">Product</label>
                                 <select name="product_id" class="form-control" required>
                                     @foreach($products as $product)
-                                        <option value="{{ $product->id }}" {{ $product->id == $order->product_id ? 'selected' : '' }}>{{ $product->name }}</option>
+                                        <option
+                                            value="{{ $product->id }}" {{ $product->id == $order->product_id ? 'selected' : '' }}>{{ $product->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="order_price">Order Price</label>
-                                <input type="number" step="0.01" name="order_price" class="form-control" value="{{ $order->order_price }}" required>
+                                <input type="number" step="0.01" name="order_price" class="form-control"
+                                       value="{{ $order->order_price }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="description">Description</label>
